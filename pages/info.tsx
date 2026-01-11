@@ -51,8 +51,8 @@ const InfoPage = () => {
           </div>
           <div className={styles.imageBlock}>
             <Image
-              src="https://placebear.com/640/360"
-              alt="Bear in the water"
+              src="https://placecats.com/640/360"
+              alt="Cat resting"
               width={640}
               height={360}
             />
