@@ -26,6 +26,7 @@ const HomePage = () => {
 
         const payload = (await response.json()) as ApiData;
         setData(payload);
+        setError(null);
         const updated = response.headers.get("x-last-updated");
         setLastUpdated(updated ?? new Date().toLocaleString());
       } catch {
@@ -72,7 +73,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        {error ? <div className={styles.error}>{error}</div> : null}
+        {error && !data ? <div className={styles.error}>{error}</div> : null}
 
         <section className={styles.cards}>
           {sortedRates.map(([currency, rate]) => (
